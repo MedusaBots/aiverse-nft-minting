@@ -1,0 +1,155 @@
+.NFTbody{
+  color: white;
+  background-color: black;
+  height: 100vh;
+}
+.boxer{
+  border: 1px solid #353434;
+  width: 20%;
+  height: 350px;
+  margin-right: 60px;
+  border-top-right-radius: 70px;
+  background: linear-gradient(90deg, #FFFFFF -75.39%, rgb(37 28 28 / 39%) 29.65%);
+  opacity: 0.7;
+}
+
+.carding{
+  display: flex;
+  margin: auto;
+  margin-top: 120px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 3rem;
+}
+
+.CardHeader{
+  height: 10px;
+  text-align: left;
+  margin-left: 3rem;
+  font-style: normal;
+  line-height: 4rem;
+  font-size: 3rem;
+  font-weight: 350;
+  width: 50%
+}
+
+.hr{
+  position: relative;
+  top: 6.5rem;
+  width: 25%;
+  left: 5rem;
+  text-align: left;
+  margin: 30px 0;
+  font-family: 'PT Mono', monospace;
+}
+
+.pTag{
+  font-size: x-large;
+  line-height: 2rem;
+  position: relative;
+  width: 33%;
+  text-align: left;
+  left: 3rem;
+  top: 6rem;
+  font-weight: bold;
+  width: 50%;
+  font-style: normal;
+}
+
+.Cardprop {
+  width: 20%;
+  height: 300px;
+  margin: 0 40px;
+  padding: 20px 0;
+  background: linear-gradient(90deg, #FFFFFF -75.39%, rgb(37 28 28 / 39%) 29.65%);
+  border-radius: 0 50px 0 0;
+}
+
+.cardprops{
+  position: relative;
+  text-align: left;
+}
+
+.nftH1{
+  position: relative;
+  font-size: 50px;
+  width: 25rem;
+  top: 1rem;
+  margin: 0;
+  margin-left: 30px;
+  font-weight: 800;
+  font-stretch: expanded;
+  font-style: normal;
+}
+
+@media screen and (min-width: 1057px) and (max-width: 1440px) {
+  .Cardprop {
+    height: 280px;
+    width: 22%;
+  }
+  .carding {
+    margin-top: 145px;
+  }
+  .CardHeader {
+    height: 0;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  .hr {
+    left: 5rem;
+  }
+}
+
+@media screen and (min-width: 642px) and (max-width: 1056px) {
+  .Cardprop {
+    width: 25%;
+  }
+  .CardHeader {
+    font-size: xx-large;
+  }
+}
+
+@media only screen and (max-width: 641px){
+  .NFTbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  .nftH1 {
+    font-size: 50px;
+    text-align: center;
+    top: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+  .carding {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: inherit;
+  }
+  .Cardprop {
+    width: 80%;
+    height: 300px;
+    margin: 20px 0;
+    padding: 20px 0;
+  }
+}
+
+@media screen and (min-height: 581px) and (max-height: 641px) {
+  .carding {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-height: 580px) {
+  .NFTbody {
+      padding: 40px 0;
+  }
+}

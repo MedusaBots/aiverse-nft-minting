@@ -1,0 +1,190 @@
+.engagePage {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.engageFilter {
+    width: 50%;
+    position: absolute;
+    height: 50%;
+    top: 250%;
+    background: linear-gradient(180deg, #2603FB 0%, #DC06FF 100%);
+    filter: blur(500px);
+    transform: matrix(0.93, -0.41, 0.36, 0.92, 0, 0);
+}
+
+.engageParent {
+    width: 100%;
+    height: 517px;
+}
+
+.engageTitle {
+    text-align: left;
+    width: 600px;
+    height: 186.48px;
+    margin-bottom: 88.52px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-left: 2%;
+}
+
+.engageSteps {
+    width: 20%;
+    height: auto;
+    margin-left: 52px;
+    border-radius: 0px 0px 60px 0px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) -1.52%, rgba(255, 255, 255, 0.024) 104.35%);
+    backdrop-filter: blur(120px);background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) -1.52%, rgba(255, 255, 255, 0.024) 104.35%);
+    backdrop-filter: blur(120px);
+}
+
+.engageStepBox {
+    display: flex;
+    justify-content: center;
+}
+
+.engageStepNum {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    margin: 35px;
+    color: #FFFFFF;
+
+}
+
+.engageStepName {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    margin: 35px;
+    color: #FFFFFF;
+}
+
+.skull{
+    display: none;
+    position: absolute;
+    top: 305%;
+    width: 15%;
+    right: 10%;
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+}
+
+@media screen and (min-width: 1249px) and (max-width: 1440px) {
+    .engageSteps {
+        width: 300px;
+    }
+    .engageStepName {
+        font-size: 30px;
+    }
+    .skull {
+        /* width: 18%; */
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1057px) and(max-width: 1248px) {
+    .skull {
+        /* width: 20%;
+        top: 307%; */
+        display: none;
+    }
+}
+
+@media screen and (min-width: 961px) and(max-width: 1056px) {
+    .engageSteps {
+        width: 280px;
+    }
+    .engageStepName {
+        font-size: 26px;
+    }
+    .skull {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 642px) and (max-width: 960px) {
+    .skull {
+        /* width: 23%;
+        top: 333%; */
+        display: none;
+    }
+}
+
+@media screen and (max-width: 641px) {
+    .engagePage {
+        justify-content: flex-start;
+        flex-direction: column;
+        /* height: 140vh; */
+        height: auto;
+    }
+    .engageFilter {
+        width: 100%;
+        height: 100%;
+        top: 220%;
+        transform: none;
+    }
+    .engageParent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        height: auto;
+        width: 100%;
+        height: 100vh;
+    }
+    .engageTitle {
+        font-size: xx-large;
+        text-align: center;
+        margin: 50px 0;
+        width: 100%;
+        height: auto;
+        font-weight: 400;
+    }
+    .engageStepBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .engageSteps {
+        width: 60%;
+        height: auto;
+        margin: 20px 0;
+    }
+    .engageStepNum {
+        font-size: xxx-large;
+        margin-bottom: 5px;
+        margin-top: 15px;
+    }
+    .engageStepName {
+        margin-bottom: 15px;
+        margin-top: 5px;
+        font-size: x-large;
+    }
+    .skull {
+        /* top: 265%;
+        width: 80%;
+        left: 10%; */
+        display: none;
+    }
+}
+
+@media screen and (max-height: 580px) {
+    .engageParent {
+        padding: 50px 0;
+    }
+}
