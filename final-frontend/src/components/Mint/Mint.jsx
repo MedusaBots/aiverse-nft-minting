@@ -29,7 +29,7 @@ const Mint = ({ userAddress }) => {
   };
 
   const handleMinting = () => {
-    fetch(`http://18.222.203.93/nft/${phase}`, {
+    fetch(`http://www.api.aiverse.co.in/nft/${phase}`, {
       method: "GET",
     }).then((data) => {
       data.json().then((response) => {
@@ -37,7 +37,7 @@ const Mint = ({ userAddress }) => {
           method: "GET",
         }).then((data1) => {
           data1.json().then((response1) => {
-            console.log(response1.image);
+            // console.log(response1.image);
             seturi(response1.image);
           });
         });
@@ -50,7 +50,7 @@ const Mint = ({ userAddress }) => {
       setSnackBarMessage("Please wait for sometime while NFT is minting");
       console.log("first", phase);
       function sendTransaction(tokenURI) {
-        console.log("minting now", nftContract, Contract.abi);
+        // console.log("minting now", nftContract, Contract.abi);
         let params = [
           {
             from: userAddress,
@@ -76,7 +76,7 @@ const Mint = ({ userAddress }) => {
       }
 
       if (userAddress) {
-        console.log("second", userAddress);
+        // console.log("second", userAddress);
         mintingNFT(uri);
       }
     }
