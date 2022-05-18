@@ -42,8 +42,8 @@ const App = () => {
       <ScrollSection />
       <HowAiverse />
       <Engage />
-      <Nft userAddress={walletAddress} />
-      <Mint />
+      <Nft />
+      <Mint userAddress={walletAddress} />
     </div>
   );
 };
