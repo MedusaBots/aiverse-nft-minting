@@ -13,7 +13,7 @@ const Mint = ({ userAddress }) => {
     "https://eth-rinkeby.alchemyapi.io/v2/qFOiMhS5KfF1JnCgCdxexsSKluJi1rZy"
   );
   const Contract = require("./Aiverse.json");
-  const contractAddress = "0x1449af87d97f2f6f8476dadfa6c65492ff6c62cf";
+  const contractAddress = "0x6453520192572aA93931d25F3E66680F75B53ce4";
   const nftContract = new web3.eth.Contract(Contract.abi, contractAddress);
   const [phase, setPhase] = useState("");
   const [open, setOpen] = useState(false);
@@ -58,7 +58,7 @@ const Mint = ({ userAddress }) => {
         setSnackBarMessage(
           "Your NFT is being minted. Please wait for few minutes in the while AI would generate image for you."
         );
-        fetch(`http://18.222.203.93/nft/${phase}`, {
+        fetch(`http://www.api.aiverse.co.in/nft/${phase}`, {
           method: "GET",
         }).then((data) => {
           data.json().then((response) => {
