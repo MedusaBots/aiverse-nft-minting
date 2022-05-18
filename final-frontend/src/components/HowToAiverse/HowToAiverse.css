@@ -1,0 +1,193 @@
+.aiversebg {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+}
+
+.howToFilter {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    158.16deg,
+    rgba(183, 0, 165, 0.76) 31.96%,
+    rgba(107, 0, 157, 0.76) 41.66%,
+    rgba(107, 0, 157, 0.76) 46.07%
+  );
+  opacity: 30%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.header-aiverse {
+  background-clip: text;
+  font-style: normal;
+  font-weight: 800;
+  color: #ffffff;
+  width: 40%;
+  font-size: 4rem;
+}
+
+.top-header {
+  display: flex;
+  text-align: left;
+  margin-left: 13%;
+  padding-top: 20px;
+}
+
+.p1 {
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: xx-large;
+  line-height: 160%;
+  color: white;
+  margin-top: 13%;
+  margin-left: -40%;
+  line-height: 1.5;
+  margin-bottom: 5%;
+}
+
+.robot {
+  display: flex;
+  width: 50%;
+  transform: scaleX(-1);
+}
+
+.techImg {
+  width: 16%;
+  height: 62%;
+  transform: rotate(40deg);
+  object-fit: unset;
+  size: landscape;
+  margin-left: 70%;
+  margin-top: -19%;
+}
+
+.box {
+  width: 60%;
+  background: #7b71a05c;
+  border-top-right-radius: 50px;
+  padding: 10px 20px;
+}
+
+.imagin {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  font-size: x-large;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+
+@media screen and (min-width: 1249px) and (max-width: 1440px) {
+  .header-aiverse {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 1057px) and (max-width: 1248px) {
+  .header-aiverse {
+    font-size: 40px;
+  }
+  .techImg {
+    width: 18%;
+    margin-left: 68%;
+  }
+}
+
+@media screen and (min-width: 1057px) and (max-width: 1152px) {
+  .techImg {
+    margin-left: 65%;
+  }
+}
+
+@media screen and (min-width: 962px) and (max-width: 1056px) {
+  .header-aiverse {
+    font-size: xx-large;
+  }
+  .p1 {
+    font-size: 25px;
+    margin-top: 15%;
+  }
+  .techImg {
+    width: 15%;
+    margin-left: 63%;
+  }
+}
+
+@media screen and (min-width: 642px) and (max-width: 960px) {
+  .techImg {
+    width: 20%;
+    margin-left: 60%;
+  }
+  .header-aiverse {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 641px) {
+  .aiversebg {
+    width: 100%;
+    height: 100vh;
+  }
+  .howToFilter {
+    top: auto;
+    height: 100vh;
+  }
+  .top-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .header-aiverse {
+    width: 100%;
+    font-size: xx-large;
+    text-align: center;
+  }
+  .p1 {
+    margin: 0;
+    font-size: larger;
+    line-height: 1.2;
+  }
+  .techImg {
+    width: 42%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: -15%;
+    opacity: 50%;
+  }
+}
+
+@media screen and (min-height: 581px) and (max-height: 641px) {
+  .aiversebg {
+    height: 100vh;
+  }
+  .howToFilter {
+    height: 100%;
+  }
+  .header-aiverse {
+    font-size: 2.5rem;
+  }
+  .p1 {
+    font-size: larger;
+  }
+}
+
+@media screen and (max-height: 580px) {
+  .robot {
+    height: 30vh;
+    width: 40vh;
+    margin-top: -20%;
+  }
+  .techImg {
+    margin-top: -20%;
+  }
+}
+
+@media screen and (min-height: 580px) and (max-height: 800px) {
+  
+}
