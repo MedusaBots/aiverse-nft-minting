@@ -15,7 +15,7 @@ const Mint = ({ userAddress }) => {
   const web3 = createAlchemyWeb3(
     "https://eth-rinkeby.alchemyapi.io/v2/qFOiMhS5KfF1JnCgCdxexsSKluJi1rZy"
   );
-  const contractAddress = "0x6453520192572aA93931d25F3E66680F75B53ce4";
+  const contractAddress = "0x196f2ed79a910c9091bfc41795cff6d0fd671c15";
   const nftContract = new web3.eth.Contract(Contract.abi, contractAddress);
   const [phase, setPhase] = useState("");
   const [open, setOpen] = useState(false);
@@ -38,7 +38,7 @@ const Mint = ({ userAddress }) => {
               to: contractAddress,
               gas: "35000",
               gasPrice: "0x9184e72a000",
-              value: "50000000000000",
+              value: "50000000",
               data: nftContract.methods
                 .safeMint(userAddress, tokenURI)
                 .encodeABI(),
@@ -59,6 +59,7 @@ const Mint = ({ userAddress }) => {
         );
         fetch(`https://www.apiaiversenft.xyz/nft/${phase}`, {
           signal: Timeout(600).signal,
+          mode: "no-cors",
           headers: {
             "Access-Control-Allow-Origin": "*",
             "Content-type": "application/json",
