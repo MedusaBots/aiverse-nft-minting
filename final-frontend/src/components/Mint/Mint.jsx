@@ -59,7 +59,6 @@ const Mint = ({ userAddress }) => {
         );
         fetch(`https://www.apiaiversenft.xyz/nft/${phase}`, {
           signal: Timeout(600).signal,
-          mode: "no-cors",
           headers: {
             "Access-Control-Allow-Origin": "*",
             "Content-type": "application/json",
