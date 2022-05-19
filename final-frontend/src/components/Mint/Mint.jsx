@@ -86,6 +86,7 @@ const Mint = ({ userAddress }) => {
           className="mintInput"
           placeholder="Enter your phase"
           onChange={handlePhaseInput}
+          value={phase}
         />
         <button
           className="buttonMint"
