@@ -8,18 +8,17 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 
+const Contract = require("./Aiverse.json");
+
 const Mint = ({ userAddress }) => {
   const web3 = createAlchemyWeb3(
     "https://eth-rinkeby.alchemyapi.io/v2/qFOiMhS5KfF1JnCgCdxexsSKluJi1rZy"
   );
-  const Contract = require("./Aiverse.json");
   const contractAddress = "0x6453520192572aA93931d25F3E66680F75B53ce4";
   const nftContract = new web3.eth.Contract(Contract.abi, contractAddress);
   const [phase, setPhase] = useState("");
   const [open, setOpen] = useState(false);
-  const [snackBarMessage, setSnackBarMessage] = useState(
-    "Please Enter the Phase!!!"
-  );
+  const [snackBarMessage, setSnackBarMessage] = useState("");
   const [uri, seturi] = useState(null);
 
   const handlePhaseInput = (e) => {
@@ -32,7 +31,6 @@ const Mint = ({ userAddress }) => {
     } else {
       if (userAddress) {
         function sendTransaction(tokenURI) {
-          console.log("minting now", nftContract, Contract.abi);
           let params = [
             {
               from: userAddress,
@@ -45,7 +43,7 @@ const Mint = ({ userAddress }) => {
                 .encodeABI(),
             },
           ];
-
+          console.log("minting now", nftContract, "Contract ABI", Contract.abi);
           let result = window.ethereum
             .request({ method: "eth_sendTransaction", params })
             .catch((err) => {
@@ -58,13 +56,14 @@ const Mint = ({ userAddress }) => {
         setSnackBarMessage(
           "Your NFT is being minted. Please wait for few minutes in the while AI would generate image for you."
         );
-        fetch(`http://www.api.aiverse.co.in/nft/${phase}`, {
+        fetch(`https://www.apiaiversenft.xyz/nft/${phase}`, {
+          mode: "no-cors",
           method: "GET",
         }).then((data) => {
           data.json().then((response) => {
             console.log(response.query);
             seturi(response.query);
-            mintingNFT(uri);
+            mintingNFT(response.query);
           });
         });
       } else {
