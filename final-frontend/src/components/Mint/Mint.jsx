@@ -5,6 +5,7 @@ import logo from "../../assets/images/logo.png";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import { Timeout } from "./abort";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 
@@ -57,15 +58,19 @@ const Mint = ({ userAddress }) => {
           "Your NFT is being minted. Please wait for few minutes in the while AI would generate image for you."
         );
         fetch(`https://www.apiaiversenft.xyz/nft/${phase}`, {
-          mode: "no-cors",
-          method: "GET",
-        }).then((data) => {
-          data.json().then((response) => {
-            console.log(response.query);
-            seturi(response.query);
-            mintingNFT(response.query);
-          });
-        });
+          signal: Timeout(600).signal,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-type": "application/json",
+          },
+        })
+          .then((data) => data.json())
+          .then((res) => {
+            console.log(res);
+            seturi(res.query);
+            mintingNFT(res.query);
+          })
+          .catch((err) => console.log(err));
       } else {
         setSnackBarMessage("Please connect your wallet and then mint your NFT");
       }
