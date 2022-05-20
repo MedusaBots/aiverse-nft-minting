@@ -23,13 +23,13 @@ const Header = (props) => {
     metmask: {
       package: true,
     },
-    bitski: {
-      package: Bitski, // required
-      options: {
-        clientId: "586419321608012265", // required what is this?
-        callbackUrl: "586419321608012265", // required
-      },
-    },
+    // bitski: {
+    //   package: Bitski, // required
+    //   options: {
+    //     clientId: "586419321608012265", // required what is this?
+    //     callbackUrl: "586419321608012265", // required
+    //   },
+    // },
     walletconnect: {
       package: WalletConnectProvider, // required
       options: {
