@@ -36,8 +36,8 @@ const Mint = ({ userAddress }) => {
             {
               from: userAddress,
               to: contractAddress,
-              gas: "0x59D8",
-              gasPrice: "0x59D8",
+              // gas: "0x59D8",
+              // gasPrice: "0x59D8",
               value: "0xB1A2BC2EC50000",
               data: nftContract.methods
                 .safeMint(userAddress, tokenURI)
