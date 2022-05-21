@@ -2,7 +2,7 @@ import "./Mint.css";
 import { useState } from "react";
 import Snackbar from "@mui/material/Snackbar";
 import logo from "../../assets/images/logo.png";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+import EmailIcon from "@mui/icons-material/Email";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { Timeout } from "./abort";
@@ -128,15 +128,32 @@ const Mint = ({ userAddress }) => {
         </div>
         <div className="mintFooterLinkParent">
           <div className="mintFooterInternalLink">
-            <p className="internalLink">About Us</p>
-            <p className="internalLink">Contact</p>
-            <p className="internalLink">Home</p>
-            <p className="internalLink">Whitepaper</p>
+            <a className="internalLink" href="">
+              About Us
+            </a>
+            <a className="internalLink" href="">
+              Contact
+            </a>
+            <a className="internalLink" href="https://nft.aiverse.co.in/">
+              Home
+            </a>
+            <a
+              className="internalLink"
+              href="https://drive.google.com/file/d/12wUlejsHPuImzPBrUmNlmody70lU8AcL/view"
+            >
+              Whitepaper
+            </a>
           </div>
           <div className="mintFooterExternalLink">
-            <TwitterIcon className="externalLink" />
-            <TelegramIcon className="externalLink" />
-            <YouTubeIcon className="externalLink" />
+            <a href="https://twitter.com/AIVerse_Dai">
+              <TwitterIcon className="externalLink" />
+            </a>
+            <a href="https://t.me/AIVERSE_DAI">
+              <TelegramIcon className="externalLink mintFooterExternalLinkMiddle" />
+            </a>
+            <a href="mailto:abhishekl@aiverse.co.in">
+              <EmailIcon className="externalLink" />
+            </a>
           </div>
         </div>
       </div>
@@ -150,15 +167,32 @@ const Mint = ({ userAddress }) => {
       </div>
       <div className="mintFooterLinkParentMobile">
         <div className="mintFooterInternalLink">
-          <p className="internalLink">About Us</p>
-          <p className="internalLink">Contact</p>
-          <p className="internalLink">Home</p>
-          <p className="internalLink">Whitepaper</p>
+          <a className="internalLink" href="">
+            About Us
+          </a>
+          <a className="internalLink" href="">
+            Contact
+          </a>
+          <a className="internalLink" href="https://nft.aiverse.co.in/">
+            Home
+          </a>
+          <a
+            className="internalLink"
+            href="https://drive.google.com/file/d/12wUlejsHPuImzPBrUmNlmody70lU8AcL/view"
+          >
+            Whitepaper
+          </a>
         </div>
         <div className="mintFooterExternalLink">
-          <TwitterIcon className="externalLink" />
-          <TelegramIcon className="externalLink mintFooterExternalLinkMiddle" />
-          <YouTubeIcon className="externalLink" />
+          <a href="https://twitter.com/AIVerse_Dai">
+            <TwitterIcon className="externalLink" />
+          </a>
+          <a href="https://t.me/AIVERSE_DAI">
+            <TelegramIcon className="externalLink mintFooterExternalLinkMiddle" />
+          </a>
+          <a href="mailto:abhishekl@aiverse.co.in">
+            <EmailIcon className="externalLink" />
+          </a>
         </div>
       </div>
       <div className="mintTermsAndPolicyParent">

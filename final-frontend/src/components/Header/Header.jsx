@@ -112,9 +112,15 @@ const Header = (props) => {
                 )}`
               : "Connect Wallet"}
           </button>
-          <TelegramIcon className="externalLink" />
-          <TwitterIcon className="externalLink" />
-          <EmailIcon className="externalLink" />
+          <a href="https://t.me/AIVERSE_DAI">
+            <TelegramIcon className="externalLink" />
+          </a>
+          <a href="mailto:abhishekl@aiverse.co.in">
+            <EmailIcon className="externalLink" />
+          </a>
+          <a href="https://twitter.com/AIVerse_Dai">
+            <TwitterIcon className="externalLink" />
+          </a>{" "}
         </div>
       </div>
       <div className="headerContent">
