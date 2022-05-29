@@ -14,11 +14,16 @@ import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 import { Bitski } from "bitski";
 import { useState, useEffect } from "react";
 import TelegramIcon from "@mui/icons-material/Telegram";
+const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 
+const Contract = require("../Mint/Aiverse.json");
 const Header = (props) => {
-  const [walletAddress, setWalletAddress] = useState("");
+  const web3 = createAlchemyWeb3(
+    "https://eth-rinkeby.alchemyapi.io/v2/qFOiMhS5KfF1JnCgCdxexsSKluJi1rZy"
+  );
+  const contractAddress = "0x3647b747ed3cb65a9c6ed915d31c8a69f39c5121";
+  const nftContract = new web3.eth.Contract(Contract.abi, contractAddress);
   const internalLinks = ["HOME", "ABOUT", "MINT", "CONTACT US"];
-
   const providerOptions = {
     metmask: {
       package: true,
@@ -54,7 +59,29 @@ const Header = (props) => {
     cacheProvider: true,
     providerOptions,
   });
-
+  const clickhandler = () => {
+    if (props.walletAddress) {
+      if (props.walletAddress === props.contractOwner) {
+        let params = [
+          {
+            from: props.walletAddress,
+            to: contractAddress,
+            // gas: "0x59D8",
+            // gasPrice: "0x59D8",
+            // value: "0xB1A2BC2EC50000",
+            data: nftContract.methods.withdrawal(50000000000000000).encodeABI(),
+          },
+        ];
+        console.log("withdrawing now");
+        let result = window.ethereum
+          .request({ method: "eth_sendTransaction", params })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    } else {
+    }
+  };
   const connectWallet = async () => {
     const provider = await web3Modal.connect();
     const web3 = new Web3(provider);
@@ -136,7 +163,18 @@ const Header = (props) => {
             a phrase and making a NFT of the image.
           </p>
           <div className="poweredBy">
-            <button className="mintYourNft">Mint your NFT </button>
+            <button className="mintYourNft" style={{ margin: "0 10px" }}>
+              Mint your NFT{" "}
+            </button>
+            {props.contractOwner === props.walletAddress && (
+              <button
+                className="mintYourNft"
+                onClick={clickhandler}
+                style={{ cursor: "pointer" }}
+              >
+                Withdraw
+              </button>
+            )}
           </div>
         </div>
       </div>

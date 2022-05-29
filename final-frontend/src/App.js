@@ -10,6 +10,7 @@ import ScrollSection from "./components/ScrollSection/ScrollSection";
 
 const App = () => {
   const [walletAddress, setWalletAddress] = useState(null);
+  const contractOwner = "0x27aa19Dfe4C1f8F33D7344fd03E8417bEE290655";
   const passData = (data) => {
     if (data == "home") {
       scroller.scrollTo(data, {
@@ -38,6 +39,7 @@ const App = () => {
         passData={passData}
         walletAddress={walletAddress}
         setWalletAddress={setWalletAddress}
+        contractOwner={contractOwner}
       />
       <ScrollSection />
       <HowAiverse />
