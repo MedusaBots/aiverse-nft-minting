@@ -45,7 +45,7 @@ const App = () => {
       <HowAiverse />
       <Engage />
       <Nft />
-      <Mint userAddress={walletAddress} />
+      <Mint userAddress={walletAddress} passData={passData} />
     </div>
   );
 };

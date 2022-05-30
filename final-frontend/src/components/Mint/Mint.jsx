@@ -7,11 +7,15 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { Timeout } from "./abort";
 import CopyrightIcon from "@mui/icons-material/Copyright";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+import Form from "./Form";
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 
 const Contract = require("./Aiverse.json");
 
-const Mint = ({ userAddress }) => {
+const Mint = ({ userAddress, passData }) => {
+  const url =
+    "https://gmail.us10.list-manage.com/subscribe/post?u=3cc5b7a53a75b3091ee32bab3&amp;id=b139dcf936";
   const web3 = createAlchemyWeb3(
     "https://eth-rinkeby.alchemyapi.io/v2/qFOiMhS5KfF1JnCgCdxexsSKluJi1rZy"
   );
@@ -112,8 +116,16 @@ const Mint = ({ userAddress }) => {
         <span className="mintBottomtextGradientThinking">You're Thinking</span>
       </p>
       <div className="mintEmailParent">
-        <input className="mintEmailInput" placeholder="Your Email" />
-        <button className="mintEmailButton">Send</button>
+        <MailchimpSubscribe
+          url={url}
+          render={({ subscribe, status, message }) => (
+            <Form
+              status={status}
+              message={message}
+              onValidated={(formData) => subscribe(formData)}
+            />
+          )}
+        />
         <p className="mintEmailText">
           Get In
           <br />
@@ -128,13 +140,13 @@ const Mint = ({ userAddress }) => {
         </div>
         <div className="mintFooterLinkParent">
           <div className="mintFooterInternalLink">
-            <a className="internalLink" href="">
+            <a className="internalLink" onClick={() => passData("about")}>
               About Us
             </a>
-            <a className="internalLink" href="">
+            <a className="internalLink" onClick={() => passData("mint")}>
               Contact
             </a>
-            <a className="internalLink" href="https://nft.aiverse.co.in/">
+            <a className="internalLink" onClick={() => passData("home")}>
               Home
             </a>
             <a
@@ -167,13 +179,13 @@ const Mint = ({ userAddress }) => {
       </div>
       <div className="mintFooterLinkParentMobile">
         <div className="mintFooterInternalLink">
-          <a className="internalLink" href="">
+          <a className="internalLink" onClick={() => passData("about")}>
             About Us
           </a>
-          <a className="internalLink" href="">
+          <a className="internalLink" onClick={() => passData("mint")}>
             Contact
           </a>
-          <a className="internalLink" href="https://nft.aiverse.co.in/">
+          <a className="internalLink" onClick={() => passData("home")}>
             Home
           </a>
           <a
