@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.14103e66.chunk.css",
-    "main.js": "/static/js/main.86c8591c.chunk.js",
-    "main.js.map": "/static/js/main.86c8591c.chunk.js.map",
+    "main.css": "/static/css/main.cad0a6b0.chunk.css",
+    "main.js": "/static/js/main.02fd6367.chunk.js",
+    "main.js.map": "/static/js/main.02fd6367.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.08a5f3ba.js",
     "runtime-main.js.map": "/static/js/runtime-main.08a5f3ba.js.map",
     "static/js/2.c7fef9db.chunk.js": "/static/js/2.c7fef9db.chunk.js",
     "static/js/2.c7fef9db.chunk.js.map": "/static/js/2.c7fef9db.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.14103e66.chunk.css.map": "/static/css/main.14103e66.chunk.css.map",
+    "static/css/main.cad0a6b0.chunk.css.map": "/static/css/main.cad0a6b0.chunk.css.map",
     "static/js/2.c7fef9db.chunk.js.LICENSE.txt": "/static/js/2.c7fef9db.chunk.js.LICENSE.txt",
     "static/media/astro.1ec336eb.jpg": "/static/media/astro.1ec336eb.jpg",
     "static/media/Header.css": "/static/media/landinghand.6b405d39.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.08a5f3ba.js",
     "static/js/2.c7fef9db.chunk.js",
-    "static/css/main.14103e66.chunk.css",
-    "static/js/main.86c8591c.chunk.js"
+    "static/css/main.cad0a6b0.chunk.css",
+    "static/js/main.02fd6367.chunk.js"
   ]
 }

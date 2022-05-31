@@ -163,7 +163,11 @@ const Header = (props) => {
             a phrase and making a NFT of the image.
           </p>
           <div className="poweredBy">
-            <button className="mintYourNft" style={{ margin: "0 10px" }}>
+            <button
+              className="mintYourNft"
+              style={{ margin: "0 10px" }}
+              onClick={() => props.passData("mint")}
+            >
               Mint your NFT{" "}
             </button>
             {props.contractOwner === props.walletAddress && (
