@@ -59,7 +59,7 @@ const Mint = ({ userAddress, passData }) => {
           sendTransaction(tokenURI);
         }
         setSnackBarMessage(
-          "Your NFT is being minted. Please wait for few minutes in the while AI would generate image for you."
+          "Your NFT is being minted. Please wait for few minutes in the while AI would generate image for you. Please don't close window or browser"
         );
         fetch(`https://www.apiaiversenft.xyz/nft/${phase}`, {
           signal: Timeout(600).signal,
@@ -68,11 +68,20 @@ const Mint = ({ userAddress, passData }) => {
             "Content-type": "application/json",
           },
         })
-          .then((data) => data.json())
-          .then((res) => {
-            console.log(res);
-            seturi(res.query);
-            mintingNFT(res.query);
+          .then((data) => {
+            if (data.ok) {
+              console.log("hello");
+              data.json().then((res) => {
+                // setSnackBarMessage(
+                //   "Minting has started. Please don't close window or browser"
+                // );
+                seturi(res.query);
+                mintingNFT(res.query);
+              });
+            } else {
+              // alert("Too many requests. Try after some time");
+              setSnackBarMessage("Too many requests. Try after some time");
+            }
           })
           .catch((err) => console.log(err));
       } else {
@@ -219,7 +228,7 @@ const Mint = ({ userAddress, passData }) => {
       </div>
       <Snackbar
         open={open}
-        autoHideDuration={3000}
+        autoHideDuration={40000}
         message={snackBarMessage}
         onClose={handleClose}
       />
