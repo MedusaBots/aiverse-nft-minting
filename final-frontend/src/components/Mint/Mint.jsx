@@ -40,7 +40,7 @@ const Mint = ({ userAddress, passData }) => {
             {
               from: userAddress,
               to: contractAddress,
-              gas: "0x2dc6c0",
+              gas: "0x7A120",
               // gasPrice: "0x59D8",
               value: "0x6F05B59D3B20000",
               data: nftContract.methods
